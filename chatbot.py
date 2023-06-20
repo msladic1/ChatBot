@@ -5,11 +5,6 @@ import argparse
 config = dotenv_values(".env")
 openai.api_key = config["OPENAI_API_KEY"]
 
-res = openai.ChatCompletion.create(
-    model="gpt-3.5-turbo",
-    messages = [{"role": "user", "content": "What is the best car in the world? "}]
-)
-
 def main():
     parser = argparse.ArgumentParser(description = "Simple command line with GPT-3.5-turbo")
     parser.add_argument("--personality", type=str, help="A brief summary of chatbot's personality", default="friendly and helpful chatbot")
